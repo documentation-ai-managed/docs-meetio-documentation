@@ -1,0 +1,135 @@
+---
+title: Communities
+description: Learn how to create, manage, and participate in tech communities on Meetio
+---
+
+## Community Building
+
+Communities form the core of Meetio's platform, enabling students and developers to connect around shared interests. You create communities focused on specific technologies, locations, or career stages. Effective community management fosters engagement and growth.
+
+## Creating Communities
+
+<Steps>
+  <Step title="Define Purpose" icon="target">
+    Identify the community's focus area, target audience, and goals.
+  </Step>
+  <Step title="Set Up Profile" icon="settings">
+    Create a compelling community name, description, and branding.
+  </Step>
+  <Step title="Invite Members" icon="users">
+    Invite initial members and set up invitation links for growth.
+  </Step>
+  <Step title="Establish Rules" icon="book">
+    Define community guidelines and moderation policies.
+  </Step>
+</Steps>
+
+## Community Types
+
+<Tabs>
+  <Tab title="Technology Focus" icon="code">
+    Communities centered around specific programming languages, frameworks, or tools.
+  </Tab>
+  <Tab title="Location Based" icon="map-pin">
+    Local communities for in-person meetups and regional networking.
+  </Tab>
+  <Tab title="Career Stage" icon="briefcase">
+    Groups for students, junior developers, or senior professionals.
+  </Tab>
+  <Tab title="Special Interest" icon="heart">
+    Communities for niche topics like AI ethics, open source, or entrepreneurship.
+  </Tab>
+</Tabs>
+
+## Member Management
+
+<ExpandableGroup>
+  <Expandable title="Moderation Tools" default-open="true">
+    Use built-in moderation features to maintain community standards and handle inappropriate content.
+  </Expandable>
+  <Expandable title="Member Roles" default-open="false">
+    Assign roles like admin, moderator, or member with different permissions.
+  </Expandable>
+  <Expandable title="Analytics" default-open="false">
+    Track community growth, engagement metrics, and member activity.
+  </Expandable>
+</ExpandableGroup>
+
+## Engagement Features
+
+<Callout kind="info">
+  Boost engagement by scheduling regular events, discussions, and challenges within your community.
+</Callout>
+
+## Code Examples
+
+<CodeGroup tabs="JavaScript,Python">
+  ```javascript
+const meetio = require('meetio-sdk');
+
+const client = new meetio.Client({ apiKey: 'your-key' });
+
+// Create a new community
+client.createCommunity({
+  name: 'React Developers',
+  description: 'Community for React enthusiasts',
+  category: 'frontend',
+  isPrivate: false
+}).then(community => {
+  console.log('Community created:', community.id);
+});
+
+// Get community members
+client.getCommunityMembers(community.id).then(members => {
+  console.log('Members:', members.length);
+});
+```
+  ```python
+from meetio import MeetioClient
+
+client = MeetioClient(api_key='your-key')
+
+# Create a new community
+community = client.create_community(
+    name='Python ML Group',
+    description='Machine learning practitioners',
+    category='ai',
+    is_private=False
+)
+print(f'Community created: {community.id}')
+
+# Get community members
+members = client.get_community_members(community.id)
+print(f'Members: {len(members)}')
+```
+</CodeGroup>
+
+## Community Guidelines
+
+<Expandable title="Best Practices" default-open="true">
+  Encourage respectful discussions, provide value through content, and actively moderate to maintain quality.
+</Expandable>
+
+## Growth Strategies
+
+<Tabs>
+  <Tab title="Content Marketing" icon="file-text">
+    Share valuable content and tutorials to attract members with similar interests.
+  </Tab>
+  <Tab title="Events" icon="calendar">
+    Host regular events to increase engagement and visibility.
+  </Tab>
+  <Tab title="Partnerships" icon="handshake">
+    Collaborate with other communities for cross-promotion and joint events.
+  </Tab>
+</Tabs>
+
+## Troubleshooting
+
+<Callout kind="danger">
+  If community creation fails, ensure you have verified your account and meet the minimum requirements.
+</Callout>
+
+<Expandable title="Common Issues" default-open="false">
+  Address common problems like low engagement, spam content, and member conflicts with proactive solutions.
+</Expandable>

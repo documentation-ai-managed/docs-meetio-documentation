@@ -1,0 +1,126 @@
+---
+title: Events
+description: Discover and manage tech events using Meetio's AI-powered recommendations
+---
+
+## Event Discovery
+
+Meetio's AI-powered event discovery helps you find relevant tech events worldwide. You receive personalized recommendations based on your profile, interests, and past attendance. Explore events by category, location, or skill level to expand your network.
+
+## Browsing Events
+
+<Steps>
+  <Step title="Set Preferences" icon="settings">
+    Update your profile with interests and skills to receive better event recommendations.
+  </Step>
+  <Step title="Search Events" icon="search">
+    Use filters to find events by date, location, topic, or organizer.
+  </Step>
+  <Step title="Register" icon="check">
+    Register for events directly through Meetio to add them to your calendar.
+  </Step>
+</Steps>
+
+## Event Categories
+
+<Tabs>
+  <Tab title="Workshops" icon="tool">
+    Hands-on learning sessions focused on specific technologies or skills.
+  </Tab>
+  <Tab title="Conferences" icon="users">
+    Large-scale events with multiple speakers and networking opportunities.
+  </Tab>
+  <Tab title="Meetups" icon="globe">
+    Local community gatherings for casual learning and connection.
+  </Tab>
+  <Tab title="Hackathons" icon="code">
+    Competitive coding events with prizes and collaboration.
+  </Tab>
+</Tabs>
+
+## AI Recommendations
+
+<Callout kind="tip">
+  Our AI analyzes your profile and attendance history to suggest events that match your interests and skill level.
+</Callout>
+
+## Managing Your Events
+
+<ExpandableGroup>
+  <Expandable title="Creating Events" default-open="true">
+    Community admins can create events through the dashboard, specifying details like date, location, and description.
+  </Expandable>
+  <Expandable title="Event Analytics" default-open="false">
+    Track attendance and engagement metrics for events you organize.
+  </Expandable>
+  <Expandable title="Virtual Events" default-open="false">
+    Host online events with integrated video conferencing and chat features.
+  </Expandable>
+</ExpandableGroup>
+
+## Code Integration
+
+<CodeGroup tabs="JavaScript,Python">
+  ```javascript
+const meetio = require('meetio-sdk');
+
+const client = new meetio.Client({ apiKey: 'your-key' });
+
+// Get recommended events
+client.getRecommendedEvents({
+  interests: ['javascript', 'ai'],
+  location: 'remote'
+}).then(events => {
+  console.log('Recommended events:', events);
+});
+
+// Register for an event
+client.registerForEvent('event-id-123')
+  .then(() => console.log('Registered successfully'));
+```
+  ```python
+from meetio import MeetioClient
+
+client = MeetioClient(api_key='your-key')
+
+# Get recommended events
+events = client.get_recommended_events(
+    interests=['python', 'machine-learning'],
+    location='san-francisco'
+)
+print('Recommended events:', events)
+
+# Register for an event
+client.register_for_event('event-id-456')
+print('Registered successfully')
+```
+</CodeGroup>
+
+## Event Notifications
+
+<Expandable title="Notification Settings" default-open="false">
+  Configure email and push notifications for upcoming events, registration confirmations, and reminders.
+</Expandable>
+
+## Best Practices
+
+<Callout kind="success">
+  Attend diverse events to broaden your network and learn about different technologies and approaches.
+</Callout>
+
+## Troubleshooting
+
+<Callout kind="alert">
+  If events aren't loading, check your internet connection and ensure your profile preferences are set correctly.
+</Callout>
+
+## Community Events
+
+<Tabs>
+  <Tab title="Student Events" icon="user">
+    Events specifically designed for students, including career development and skill-building sessions.
+  </Tab>
+  <Tab title="Professional Events" icon="briefcase">
+    Industry-focused events for career advancement and networking with professionals.
+  </Tab>
+</Tabs>

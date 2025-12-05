@@ -1,0 +1,104 @@
+---
+title: Introduction
+description: Overview of Meetio and its core capabilities for creating and managing tech communities
+---
+
+## Getting Started
+
+Meetio empowers students and developers to create and join vibrant tech communities worldwide. You discover AI-powered events and connect with like-minded individuals through advanced networking features. Start building your community today and unlock collaboration opportunities that drive innovation.
+
+<Columns cols={3}>
+  <Card title="Create Communities" icon="users" href="communities">
+    Build and manage tech communities with powerful tools for member engagement and growth.
+  </Card>
+  <Card title="Discover Events" icon="calendar" href="events">
+    Find relevant tech events using AI-powered recommendations tailored to your interests.
+  </Card>
+  <Card title="Network" icon="globe" href="authentication">
+    Connect with developers and students through intelligent networking features.
+  </Card>
+</Columns>
+
+## Key Features
+
+<Steps>
+  <Step title="Sign Up" icon="user">
+    Create your account and verify your email to get started with Meetio.
+  </Step>
+  <Step title="Join Communities" icon="users">
+    Browse and join existing communities or create your own to connect with peers.
+  </Step>
+  <Step title="Attend Events" icon="calendar">
+    Discover and register for events that match your interests and skill level.
+  </Step>
+  <Step title="Network" icon="globe">
+    Use networking tools to connect with other members and build professional relationships.
+  </Step>
+</Steps>
+
+## Why Choose Meetio?
+
+Meetio stands out by combining community building with intelligent event discovery. Our platform uses AI to recommend events based on your profile and interests, helping you stay connected with the tech ecosystem.
+
+<Callout kind="tip">
+  New to tech communities? Start by joining a few communities that align with your interests to get the most out of Meetio.
+</Callout>
+
+## Quick Setup
+
+<CodeGroup tabs="JavaScript,Python,cURL">
+  ```javascript
+const meetio = require('meetio-sdk');
+
+const client = new meetio.Client({
+  apiKey: 'your-api-key'
+});
+
+// Get your profile
+client.getProfile().then(profile => {
+  console.log('Welcome, ' + profile.name);
+});
+```
+  ```python
+from meetio import MeetioClient
+
+client = MeetioClient(api_key='your-api-key')
+
+# Get your profile
+profile = client.get_profile()
+print(f'Welcome, {profile.name}')
+```
+  ```bash
+curl -X GET \
+  'https://api.meetio.com/v1/profile' \
+  -H 'Authorization: Bearer your-api-key'
+```
+</CodeGroup>
+
+## Support and Resources
+
+<ExpandableGroup>
+  <Expandable title="Getting Help" default-open="false">
+    Visit our support center for guides, FAQs, and contact information.
+  </Expandable>
+  <Expandable title="Community Guidelines" default-open="false">
+    Review our community guidelines to ensure a positive experience for all members.
+  </Expandable>
+</ExpandableGroup>
+
+<Expandable title="API Documentation" default-open="true">
+  Access comprehensive API documentation to integrate Meetio features into your applications.
+</Expandable>
+
+## Next Steps
+
+Now that you understand Meetio's capabilities, explore the authentication process to start using the platform. You can create an account, join communities, and begin discovering events immediately.
+
+<Tabs>
+  <Tab title="For Students" icon="user">
+    As a student, focus on joining communities and attending events to build your network and learn from peers.
+  </Tab>
+  <Tab title="For Developers" icon="code">
+    As a developer, leverage our API to integrate Meetio features and create tools for community management.
+  </Tab>
+</Tabs>
