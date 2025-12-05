@@ -2,7 +2,6 @@
 title: Authentication
 description: Learn how to authenticate with Meetio's API and manage access tokens
 ---
-
 ## Overview
 
 Authentication is the foundation of secure access to Meetio's platform. You use API keys and tokens to interact with communities, events, and networking features. Proper authentication ensures your data remains protected while enabling seamless integration.
@@ -10,13 +9,15 @@ Authentication is the foundation of secure access to Meetio's platform. You use 
 ## API Key Management
 
 <Steps>
-  <Step title="Generate API Key" icon="key">
+  <Step title="Generate API Key" icon="key" title-type="p">
     Log into your Meetio dashboard and navigate to the API settings to generate a new key.
   </Step>
-  <Step title="Store Securely" icon="lock">
+
+  <Step title="Store Securely" icon="lock" title-type="p">
     Store your API key securely and never expose it in client-side code or public repositories.
   </Step>
-  <Step title="Rotate Regularly" icon="refresh-cw">
+
+  <Step title="Rotate Regularly" icon="refresh-cw" title-type="p">
     Rotate your API keys periodically and revoke compromised keys immediately.
   </Step>
 </Steps>
@@ -27,6 +28,7 @@ Authentication is the foundation of secure access to Meetio's platform. You use 
   <Tab title="Bearer Token" icon="shield">
     Use Bearer token authentication for API requests by including the token in the Authorization header.
   </Tab>
+
   <Tab title="API Key" icon="key">
     Pass your API key as a query parameter or in the request header for simpler integrations.
   </Tab>
@@ -34,48 +36,49 @@ Authentication is the foundation of secure access to Meetio's platform. You use 
 
 ## Code Examples
 
-<CodeGroup tabs="JavaScript,Python">
+<CodeGroup show-lines="true" tabs={[]}>
   ```javascript
-const axios = require('axios');
+  const axios = require('axios');
 
-const API_KEY = 'your-api-key-here';
+  const API_KEY = 'your-api-key-here';
 
-const headers = {
+  const headers = {
   'Authorization': `Bearer ${API_KEY}`,
   'Content-Type': 'application/json'
-};
+  };
 
-axios.get('https://api.meetio.com/v1/communities', { headers })
+  axios.get('https://api.meetio.com/v1/communities', { headers })
   .then(response => {
     console.log('Communities:', response.data);
   })
   .catch(error => {
     console.error('Authentication failed:', error.response.data);
   });
-```
+  ```
+
   ```python
-import requests
+  import requests
 
-API_KEY = 'your-api-key-here'
+  API_KEY = 'your-api-key-here'
 
-headers = {
+  headers = {
     'Authorization': f'Bearer {API_KEY}',
     'Content-Type': 'application/json'
-}
+  }
 
-response = requests.get('https://api.meetio.com/v1/communities', headers=headers)
+  response = requests.get('https://api.meetio.com/v1/communities', headers=headers)
 
-if response.status_code == 200:
+  if response.status_code == 200:
     communities = response.json()
     print('Communities:', communities)
-else:
+  else:
     print('Authentication failed:', response.json())
-```
+  ```
 </CodeGroup>
 
 ## Token Expiration
 
-<Callout kind="info">
+<Callout kind="info" collapsed="false">
   Access tokens expire after 24 hours. Refresh them using your API key before expiration to maintain continuous access.
 </Callout>
 
@@ -85,9 +88,11 @@ else:
   <Expandable title="Security Guidelines" default-open="true">
     Never commit API keys to version control. Use environment variables for secure storage.
   </Expandable>
+
   <Expandable title="Rate Limiting" default-open="false">
     Monitor your API usage to avoid hitting rate limits. Implement exponential backoff for retries.
   </Expandable>
+
   <Expandable title="Error Handling" default-open="false">
     Handle authentication errors gracefully by checking response status codes and providing user feedback.
   </Expandable>
@@ -95,7 +100,7 @@ else:
 
 ## Troubleshooting
 
-<Callout kind="danger">
+<Callout kind="danger" collapsed="false">
   If authentication fails, verify your API key is valid and not expired. Check that you're using the correct endpoint URL.
 </Callout>
 
@@ -105,9 +110,11 @@ else:
   <Tab title="Web Application" icon="globe">
     Implement authentication in web apps using secure HTTP-only cookies for token storage.
   </Tab>
+
   <Tab title="Mobile App" icon="smartphone">
     Use secure keychain storage on mobile devices to protect authentication credentials.
   </Tab>
+
   <Tab title="Server-side" icon="server">
     Store API keys as environment variables on your server for backend integrations.
   </Tab>
@@ -120,3 +127,4 @@ For enterprise integrations, you can implement OAuth 2.0 flows or use service ac
 <Expandable title="OAuth Implementation" default-open="false">
   OAuth 2.0 provides a secure way to delegate access without sharing credentials. Implement the authorization code flow for web applications.
 </Expandable>
+
